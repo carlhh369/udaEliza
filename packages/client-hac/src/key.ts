@@ -151,7 +151,7 @@ function calculateAddress(keypair: Ed25519Keypair): string {
 
 (async () => {
     const filePath =
-        "/Users/houmingyu/Documents/labs/eliza/packages/client-hac/priv_validator_key.json";
+        "./priv_validator_key.json";
     try {
         const client = new CometClient("http://localhost:26617", filePath);
         const hash = await client.sendDiscussion("hello-world", 1);
@@ -160,3 +160,5 @@ function calculateAddress(keypair: Ed25519Keypair): string {
         console.error("Error:", error);
     }
 })();
+
+export { CometClient };
